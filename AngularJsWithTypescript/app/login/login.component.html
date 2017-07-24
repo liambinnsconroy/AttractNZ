@@ -1,0 +1,12 @@
+<p>About you</p>
+
+<form [formGroup]='detailsForm' (ngSubmit)='getData()'>
+    I am a <input type='number' name='age' formControlName='age'> year old<br>
+    <select type='select' name='gender' class='form-control' id="gender">
+        <option *ngFor="let c of genders" value="c.value">{{c.name}}</option>
+  </select><br>
+    <select type='select' name='country' class='form-control' id="country">
+        <option *ngFor="let c of countries" value="c.value">{{c.name}}</option>
+  </select><br>
+    <button type='submit'>Enter</button>
+</form>
