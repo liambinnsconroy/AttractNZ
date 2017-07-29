@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Chart.js demo</title>
+        <!-- import plugin script -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+    </head>
+    <body>
+        <!-- line chart canvas element -->
+        <h2 id="heading">I'm thinking of visiting NZ in March or May</h2>
+        <h2 id="heading2"></h2>
+
+        <div id="visitorNums">
+            <h3 id="visitorNumsTitle">Visitors to New Zealand</h3>
+            <h4 style="display: inline-block;" id="month1Visitors"></h4>
+            <canvas id="visitorNumsCanvas" width="600" height="400"></canvas>
+        </div>
+        
+        <script>
+            var month1 = 3;
+            var month2 = 5;
+            var data = [381068,380034,343799,311866,209170,230088,237872,221181,245089,260246,333598,494193];
+
+                       
+            // line chart data
+            var buyerData = {
+                labels : ["January","February","March","April","May","June","July","August","September","October","November","December"],
+                datasets : [
+                    {
+                        fillColor : "rgba(172,194,132,0.4)",
+                        strokeColor : "#ACC26D",
+                        pointColor : "#fff",
+                        pointStrokeColor : "#9DB86D",
+                        data : data
+                    }
+                ]
+            }
+        
+        var options = {
+            scaleShowLabels : false // to hide vertical lables
+        };
+            //document.getElementById('heading2').innerHTML = data[month1];
+            document.getElementById('month1Visitors').innerHTML = buyerData.labels[month1-1];
+            // get line chart canvas
+            var buyers = document.getElementById('visitorNumsCanvas').getContext('2d');
+            // draw line chart
+            new Chart(buyers).Line(buyerData,options);                       
+            
+        </script>
+    </body>
+</html>
