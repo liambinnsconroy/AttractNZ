@@ -122,6 +122,9 @@
                   <hr class="ml-0">
                   <h4 class="number" id="v-month2Value"></h4>
                </div>
+               <div class="col-md-4"> 
+                    <h4 class="month" id="v-commentary"></h4>
+               </div>
             </div>
          </div>
       </div>
@@ -160,6 +163,25 @@
          
          document.getElementById('v-month2Label').innerHTML = buyerData.labels[month2 - 1];
          document.getElementById('v-month2Value').innerHTML = dataset[month2 - 1];
+
+        // Start commentary block 
+        var lower = Math.min(dataset[month1-1], dataset[month2-1]);
+        var higher = Math.max(dataset[month1-1], dataset[month2-1]);
+
+        var percentageDiff = (100 -(lower / higher) * 100).toFixed(2);
+
+        if(percentageDiff == 0.00) {
+            var vMessage = "There's no difference in visitor numbers between " + buyerData.labels[month1-1] + " and " + buyerData.labels[month2-1];
+        }   
+        else if(lower.toString().match(dataset[month1-1])) {
+            var vMessage = "There's " + percentageDiff + "% less visitors in " + buyerData.labels[month1 - 1];
+        }
+        else {
+            var vMessage = "There's " + percentageDiff + "% less visitors in " + buyerData.labels[month2 - 1];
+        }
+        document.getElementById('v-commentary').innerHTML = vMessage;
+        // Finsh commentary block
+
          // get line chart canvas
          var buyers = document.getElementById('visitorNumsCanvas').getContext('2d');
          // draw line chart
@@ -181,6 +203,9 @@
                   <hr class="ml-0">
                   <h4 class="number" id="s-month2Value"></h4>
                </div>
+               <div class="col-md-4"> 
+                    <h4 class="month" id="s-commentary"></h4>
+                </div>
             </div>
             </div>
         </div>
@@ -202,6 +227,7 @@
          <h4 id="s-month1Value"></h4>
          <h4 id="s-month2Label"></h4>
          <h4 id="s-month2Value"></h4>
+         
          <canvas id="sunburnCanvas" width="600" height="400"></canvas>
       </div>
       </div>
@@ -234,6 +260,26 @@
          
          document.getElementById('s-month2Label').innerHTML = sData.labels[smonth2 - 1];
          document.getElementById('s-month2Value').innerHTML = sdataset[smonth2 - 1];
+
+         // Start commentary block 
+        var slower = Math.min(sdataset[month1-1], sdataset[month2-1]);
+        var shigher = Math.max(sdataset[month1-1], sdataset[month2-1]);
+
+        var spercentageDiff = (100 -(slower / shigher) * 100).toFixed(2);
+
+        if(spercentageDiff == 0.00) {
+            var sMessage = "There's no difference in sunburn liklihood between " + sData.labels[month1-1] + " and " + sData.labels[month2-1];
+        }   
+        else if(slower.toString().match(sdataset[month1-1])) {
+            var sMessage = "You're " + spercentageDiff + "% less likely to get sunburnt in " + sData.labels[month1 - 1];
+        }
+        else {
+            var sMessage = "You're " + spercentageDiff + "% less likely to get sunburnt in " + sData.labels[month2 - 1];
+        }
+        document.getElementById('s-commentary').innerHTML = sMessage;
+        // Finsh commentary block
+
+
          // get line chart canvas
          var canvas = document.getElementById('sunburnCanvas').getContext('2d');
          // draw line chart
