@@ -19,10 +19,49 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
       <script>
-         function updateDropdown(dropdown, month) {
+         var month1 = 3;
+         var month2 = 5;
+         function updateDropdown(dropdown, month, monthIndex) {
              var button = document.getElementById(dropdown);
              button.innerHTML = month;
+
+             if(dropdown == 'dropdownMenuButton1') {
+                month1 = monthIndex;
+             }
+             else {
+                 month2 = monthIndex;
+             }
+
+             // Update first values
+             document.getElementById('v-month1Label').innerHTML = buyerData.labels[month1 - 1];
+             document.getElementById('v-month1Value').innerHTML = dataset[month1 - 1];
+            
+             document.getElementById('v-month2Label').innerHTML = buyerData.labels[month2 - 1];
+             document.getElementById('v-month2Value').innerHTML = dataset[month2 - 1];
+
+             // Update second values
+             document.getElementById('s-month1Label').innerHTML = sData.labels[month1 - 1];
+             document.getElementById('s-month1Value').innerHTML = sdataset[month1 - 1].toFixed(2);
+         
+             document.getElementById('s-month2Label').innerHTML = sData.labels[month2 - 1];
+             document.getElementById('s-month2Value').innerHTML = sdataset[month2 - 1].toFixed(2);
+
+             // Update third values
+             document.getElementById('a-month1Label').innerHTML = aData.labels[month1 - 1];
+             document.getElementById('a-month1Value').innerHTML = adataset[month1 - 1];
+         
+             document.getElementById('a-month2Label').innerHTML = aData.labels[month2 - 1];
+             document.getElementById('a-month2Value').innerHTML = adataset[month2 - 1];
+
+             // Update third values
+             document.getElementById('k-month1Label').innerHTML = kData.labels[month1 - 1];
+             document.getElementById('k-month1Value').innerHTML = kdataset[month1 - 1];
+         
+             document.getElementById('k-month2Label').innerHTML = kData.labels[month2 - 1];
+             document.getElementById('k-month2Value').innerHTML = kdataset[month2 - 1];
          }
+
+        
       </script>
    </head>
    <body>
@@ -49,18 +88,18 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                            <h4>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'January')">January</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'Febuary')">Febuary</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'March')">March</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'April')">April</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'May')">May</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'July')">July</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'August')">August</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'September')">September</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'October')">October</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'November')">November</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'December')">
-                                 December</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'January', 1)">January</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'Febuary', 2)">Febuary</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'March', 3)">March</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'April', 4)">April</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'May', 5)">May</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'June', 6)">June</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'July', 7)">July</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'August', 8)">August</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'September', 9)">September</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'October', 10)">October</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'November', 11)">November</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'December', 12)">December</a>
                            </h4>
                         </div>
                      </div>
@@ -71,17 +110,18 @@
                      </button>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                      <h4>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'January')">January</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'Febuary')">Febuary</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'March')">March</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'April')">April</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'May')">May</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'July')">July</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'August')">August</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'September')">September</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'October')">October</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'November')">November</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'December')">December</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'January', 1)">January</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'Febuary', 2)">Febuary</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'March', 3)">March</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'April', 4)">April</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'May', 5)">May</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'June', 5)">June</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'July', 7)">July</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'August', 8)">August</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'September', 9)">September</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'October', 10)">October</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'November', 11)">November</a>
+                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'December', 12)">December</a>
                      </h4>
                      </div>
                      </div>
@@ -134,8 +174,7 @@
       </div>
       </div>
       <script>
-         var month1 = 3;
-         var month2 = 5;
+         
          
          var dataset = [381068, 380034, 343799, 311866, 209170, 230088, 237872, 221181, 245089, 260246, 333598, 494193];
          
@@ -214,8 +253,6 @@
          </div>
       </div>
       <script>
-         var smonth1 = 3;
-         var smonth2 = 5;
          
          var sdataset = [22.55263158, 19.42105263, 15.62631579, 10.85263158, 7.410526316, 5.826315789, 6.5, 9.2, 13.01052632, 17.03157895, 20.67894737, 21.92105263];
          
@@ -237,11 +274,11 @@
              scaleShowLabels: false // to hide vertical lables
          };
          
-         document.getElementById('s-month1Label').innerHTML = sData.labels[smonth1 - 1];
-         document.getElementById('s-month1Value').innerHTML = sdataset[smonth1 - 1].toFixed(2);
+         document.getElementById('s-month1Label').innerHTML = sData.labels[month1 - 1];
+         document.getElementById('s-month1Value').innerHTML = sdataset[month1 - 1].toFixed(2);
          
-         document.getElementById('s-month2Label').innerHTML = sData.labels[smonth2 - 1];
-         document.getElementById('s-month2Value').innerHTML = sdataset[smonth2 - 1].toFixed(2);
+         document.getElementById('s-month2Label').innerHTML = sData.labels[month2 - 1];
+         document.getElementById('s-month2Value').innerHTML = sdataset[month2 - 1].toFixed(2);
          
          // Start commentary block 
          var slower = Math.min(sdataset[month1-1], sdataset[month2-1]);
@@ -299,8 +336,6 @@
       </div>
       </div>
       <script>
-         var amonth1 = 3;
-         var amonth2 = 5;
          
          var adataset = [57.19, 57.01, 53.03, 46.39, 36.96, 32.86, 36.33, 35.18, 38.17, 40.9, 47, 49.23];
          
@@ -322,11 +357,11 @@
              scaleShowLabels: false // to hide vertical lables
          };
          
-         document.getElementById('a-month1Label').innerHTML = aData.labels[amonth1 - 1];
-         document.getElementById('a-month1Value').innerHTML = adataset[amonth1 - 1];
+         document.getElementById('a-month1Label').innerHTML = aData.labels[month1 - 1];
+         document.getElementById('a-month1Value').innerHTML = adataset[month1 - 1];
          
-         document.getElementById('a-month2Label').innerHTML = aData.labels[amonth2 - 1];
-         document.getElementById('a-month2Value').innerHTML = adataset[amonth2 - 1];
+         document.getElementById('a-month2Label').innerHTML = aData.labels[month2 - 1];
+         document.getElementById('a-month2Value').innerHTML = adataset[month2 - 1];
 
          // Start commentary block 
          var alower = Math.min(adataset[month1-1], adataset[month2-1]);
@@ -386,8 +421,6 @@
       
       
       <script>
-         var kmonth1 = 3;
-         var kmonth2 = 5;
          
          var kdataset = [5.8, 5.9, 4.9, 4.7, 4.5, 4.5, 4.6, 4.6, 4.7, 4.8, 5.0, 5.4];
          
@@ -409,11 +442,11 @@
              scaleShowLabels: false // to hide vertical lables
          };
          //document.getElementById('heading2').innerHTML = data[month1];
-         document.getElementById('k-month1Label').innerHTML = kData.labels[kmonth1 - 1];
-         document.getElementById('k-month1Value').innerHTML = kdataset[kmonth1 - 1];
+         document.getElementById('k-month1Label').innerHTML = kData.labels[month1 - 1];
+         document.getElementById('k-month1Value').innerHTML = kdataset[month1 - 1];
          
-         document.getElementById('k-month2Label').innerHTML = kData.labels[kmonth2 - 1];
-         document.getElementById('k-month2Value').innerHTML = kdataset[kmonth2 - 1];
+         document.getElementById('k-month2Label').innerHTML = kData.labels[month2 - 1];
+         document.getElementById('k-month2Value').innerHTML = kdataset[month2 - 1];
 
         // Start commentary block 
          var klower = Math.min(kdataset[month1-1], kdataset[month2-1]);
