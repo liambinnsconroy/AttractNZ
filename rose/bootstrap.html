@@ -24,35 +24,35 @@
          function updateDropdown(dropdown, month, monthIndex) {
              var button = document.getElementById(dropdown);
              button.innerHTML = month;
-
+         
              if(dropdown == 'dropdownMenuButton1') {
                 month1 = monthIndex;
              }
              else {
                  month2 = monthIndex;
              }
-
+         
              // Update first values
              document.getElementById('v-month1Label').innerHTML = buyerData.labels[month1 - 1];
              document.getElementById('v-month1Value').innerHTML = dataset[month1 - 1];
             
              document.getElementById('v-month2Label').innerHTML = buyerData.labels[month2 - 1];
              document.getElementById('v-month2Value').innerHTML = dataset[month2 - 1];
-
+         
              // Update second values
              document.getElementById('s-month1Label').innerHTML = sData.labels[month1 - 1];
              document.getElementById('s-month1Value').innerHTML = sdataset[month1 - 1].toFixed(2);
          
              document.getElementById('s-month2Label').innerHTML = sData.labels[month2 - 1];
              document.getElementById('s-month2Value').innerHTML = sdataset[month2 - 1].toFixed(2);
-
+         
              // Update third values
              document.getElementById('a-month1Label').innerHTML = aData.labels[month1 - 1];
              document.getElementById('a-month1Value').innerHTML = adataset[month1 - 1];
          
              document.getElementById('a-month2Label').innerHTML = aData.labels[month2 - 1];
              document.getElementById('a-month2Value').innerHTML = adataset[month2 - 1];
-
+         
              // Update third values
              document.getElementById('k-month1Label').innerHTML = kData.labels[month1 - 1];
              document.getElementById('k-month1Value').innerHTML = kdataset[month1 - 1];
@@ -60,8 +60,8 @@
              document.getElementById('k-month2Label').innerHTML = kData.labels[month2 - 1];
              document.getElementById('k-month2Value').innerHTML = kdataset[month2 - 1];
          }
-
-        
+         
+         
       </script>
    </head>
    <body>
@@ -84,46 +84,47 @@
                      <h4 class="display-inline"> I am wanting to visit New Zealand in either</h4>
                      <div class="dropdown display-inline">
                         <button class="custom-dropdown" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <h4>month <img src="down-arrow.png"></img></h4>
+                           <h4 class="display-inline">month</h4>
+                           <img alt="down arrow" src="down-arrow.png">
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                            <h4>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'January', 1)">January</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'Febuary', 2)">Febuary</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'March', 3)">March</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'April', 4)">April</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'May', 5)">May</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'June', 6)">June</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'July', 7)">July</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'August', 8)">August</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'September', 9)">September</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'October', 10)">October</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'November', 11)">November</a>
-                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'December', 12)">December</a>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'January', 1)">January</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'Febuary', 2)">Febuary</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'March', 3)">March</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'April', 4)">April</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'May', 5)">May</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'June', 6)">June</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'July', 7)">July</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'August', 8)">August</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'September', 9)">September</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'October', 10)">October</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'November', 11)">November    </button>      
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton1', 'December', 12)">December</button>
                            </h4>
                         </div>
                      </div>
                      <h4 class="display-inline"> or </h4>
                      <div class="dropdown display-inline">
-                     <button class="custom-dropdown" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <h4>month <img src="down-arrow.png"></img></h4>
-                     </button>
-                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                     <h4>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'January', 1)">January</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'Febuary', 2)">Febuary</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'March', 3)">March</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'April', 4)">April</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'May', 5)">May</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'June', 5)">June</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'July', 7)">July</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'August', 8)">August</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'September', 9)">September</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'October', 10)">October</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'November', 11)">November</a>
-                     <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'December', 12)">December</a>
-                     </h4>
-                     </div>
+                        <button class="custom-dropdown" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <h4>month <img src="down-arrow.png"></h4>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                           <h4>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'January', 1)">January</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'Febuary', 2)">Febuary</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'March', 3)">March</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'April', 4)">April</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'May', 5)">May</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'June', 5)">June</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'July', 7)">July</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'August', 8)">August</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'September', 9)">September</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'October', 10)">October</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'November', 11)">November</button>
+                              <button class="dropdown-item" onclick="updateDropdown('dropdownMenuButton2', 'December', 12)">December</button>
+                           </h4>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -172,10 +173,7 @@
             <canvas id="visitorNumsCanvas"></canvas>
          </div>
       </div>
-      </div>
       <script>
-         
-         
          var dataset = [381068, 380034, 343799, 311866, 209170, 230088, 237872, 221181, 245089, 260246, 333598, 494193];
          
          // line chart data
@@ -253,7 +251,6 @@
          </div>
       </div>
       <script>
-         
          var sdataset = [22.55263158, 19.42105263, 15.62631579, 10.85263158, 7.410526316, 5.826315789, 6.5, 9.2, 13.01052632, 17.03157895, 20.67894737, 21.92105263];
          
          // line chart data
@@ -305,7 +302,6 @@
          new Chart(canvas).Line(sData, options);
       </script>
       <!-- end stat 2 -->
-      
       <!-- start stat 3-->
       <div class="row">
          <div id="accom" class="col-md-10 offset-md-2 blue-back mt-5 pt-5 pl-5 pb-5">
@@ -332,11 +328,7 @@
             <canvas id="accomCanvas" width="600" height="400"></canvas>
          </div>
       </div>
-      </div>
-      </div>
-      </div>
       <script>
-         
          var adataset = [57.19, 57.01, 53.03, 46.39, 36.96, 32.86, 36.33, 35.18, 38.17, 40.9, 47, 49.23];
          
          // line chart data
@@ -362,7 +354,7 @@
          
          document.getElementById('a-month2Label').innerHTML = aData.labels[month2 - 1];
          document.getElementById('a-month2Value').innerHTML = adataset[month2 - 1];
-
+         
          // Start commentary block 
          var alower = Math.min(adataset[month1-1], adataset[month2-1]);
          var ahigher = Math.max(adataset[month1-1], adataset[month2-1]);
@@ -380,48 +372,42 @@
          }
          document.getElementById('a-commentary').innerHTML = aMessage;
          // Finsh commentary block
-
+         
          // get line chart canvas
          var canvas2 = document.getElementById('accomCanvas').getContext('2d');
          // draw line chart
          new Chart(canvas2).Line(aData, options);
-</script>
-
-<!--end stat3 -->
- 
-<!-- start stat4 -->
- <div class="row">
+      </script>
+      <!--end stat3 -->
+      <!-- start stat4 -->
+      <div class="row">
          <div id="kumara" class="col-md-10 offset-md-2 blue-back mt-5 pt-5 pl-5 pb-5">
-         <h3 id="accomTitle">Kumara prices NZ</h3>
-        <div class="row mt-6 pt-3">
-
-          <div class="col-md-3">
-            <h4 class ="month" id="k-month1Label"></h4>
-            <hr class="ml-0">
-            <h4 class="number"  id="k-month1Value"></h4>
-        </div>
-          <div class="col-md-3">
-            <h4 class ="month" id="k-month2Label"></h4>
-            <hr class="ml-0">
-            <h4 class="number" id="k-month2Value"></h4>
-        </div>
-        <div class="col-md-3">
+            <h3>Kumara prices NZ</h3>
+            <div class="row mt-6 pt-3">
+               <div class="col-md-3">
+                  <h4 class ="month" id="k-month1Label"></h4>
+                  <hr class="ml-0">
+                  <h4 class="number"  id="k-month1Value"></h4>
+               </div>
+               <div class="col-md-3">
+                  <h4 class ="month" id="k-month2Label"></h4>
+                  <hr class="ml-0">
+                  <h4 class="number" id="k-month2Value"></h4>
+               </div>
+               <div class="col-md-3">
                   <h4 class="month" id="k-commentary"></h4>
                </div>
-          <div class="col-md-3">
+               <div class="col-md-3">
+               </div>
+            </div>
          </div>
-        </div>
-        </div>
-    </div>
-        <div class="row">
+      </div>
+      <div class="row">
          <div class="col-md-10 offset-md-2">
-         <canvas id="kumaraCanvas" width="600" height="400"></canvas>
+            <canvas id="kumaraCanvas" width="600" height="400"></canvas>
          </div>
-    </div>
-      
-      
+      </div>
       <script>
-         
          var kdataset = [5.8, 5.9, 4.9, 4.7, 4.5, 4.5, 4.6, 4.6, 4.7, 4.8, 5.0, 5.4];
          
          // line chart data
@@ -447,8 +433,8 @@
          
          document.getElementById('k-month2Label').innerHTML = kData.labels[month2 - 1];
          document.getElementById('k-month2Value').innerHTML = kdataset[month2 - 1];
-
-        // Start commentary block 
+         
+         // Start commentary block 
          var klower = Math.min(kdataset[month1-1], kdataset[month2-1]);
          var khigher = Math.max(kdataset[month1-1], kdataset[month2-1]);
          
@@ -465,7 +451,7 @@
          }
          document.getElementById('k-commentary').innerHTML = kMessage;
          // Finsh commentary block
-
+         
          // get line chart canvas
          var canvas3 = document.getElementById('kumaraCanvas').getContext('2d');
          // draw line chart
