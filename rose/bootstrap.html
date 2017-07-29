@@ -236,12 +236,12 @@
          var options = {
              scaleShowLabels: false // to hide vertical lables
          };
-         //document.getElementById('heading2').innerHTML = data[month1];
+         
          document.getElementById('s-month1Label').innerHTML = sData.labels[smonth1 - 1];
-         document.getElementById('s-month1Value').innerHTML = sdataset[smonth1 - 1];
+         document.getElementById('s-month1Value').innerHTML = sdataset[smonth1 - 1].toFixed(2);
          
          document.getElementById('s-month2Label').innerHTML = sData.labels[smonth2 - 1];
-         document.getElementById('s-month2Value').innerHTML = sdataset[smonth2 - 1];
+         document.getElementById('s-month2Value').innerHTML = sdataset[smonth2 - 1].toFixed(2);
          
          // Start commentary block 
          var slower = Math.min(sdataset[month1-1], sdataset[month2-1]);
@@ -284,6 +284,9 @@
                   <hr class="ml-0">
                   <h4 class="number" id="a-month2Value"></h4>
                </div>
+               <div class="col-md-3">
+                  <h4 class="month" id="a-commentary"></h4>
+               </div>
             </div>
          </div>
       </div>
@@ -318,12 +321,31 @@
          var options = {
              scaleShowLabels: false // to hide vertical lables
          };
-         //document.getElementById('heading2').innerHTML = data[month1];
-         document.getElementById('a-month1Label').innerHTML = aData.labels[smonth1 - 1];
-         document.getElementById('a-month1Value').innerHTML = adataset[smonth1 - 1];
          
-         document.getElementById('a-month2Label').innerHTML = aData.labels[smonth2 - 1];
-         document.getElementById('a-month2Value').innerHTML = adataset[smonth2 - 1];
+         document.getElementById('a-month1Label').innerHTML = aData.labels[amonth1 - 1];
+         document.getElementById('a-month1Value').innerHTML = adataset[amonth1 - 1];
+         
+         document.getElementById('a-month2Label').innerHTML = aData.labels[amonth2 - 1];
+         document.getElementById('a-month2Value').innerHTML = adataset[amonth2 - 1];
+
+         // Start commentary block 
+         var alower = Math.min(adataset[month1-1], adataset[month2-1]);
+         var ahigher = Math.max(adataset[month1-1], adataset[month2-1]);
+         
+         var apercentageDiff = (100 -(alower / ahigher) * 100).toFixed(2);
+         
+         if(apercentageDiff == 0.00) {
+            var aMessage = "There's no difference in accommodation occupancy between " + aData.labels[month1-1] + " and " + aData.labels[month2-1];
+         }   
+         else if(slower.toString().match(sdataset[month1-1])) {
+            var aMessage = "Accomodation occupancy is " + apercentageDiff + "% lower in " + aData.labels[month1 - 1];
+         }
+         else {
+            var aMessage = "Accomodation occupancy is " + apercentageDiff + "% lower in " + aData.labels[month2 - 1];
+         }
+         document.getElementById('a-commentary').innerHTML = aMessage;
+         // Finsh commentary block
+
          // get line chart canvas
          var canvas2 = document.getElementById('accomCanvas').getContext('2d');
          // draw line chart
@@ -348,6 +370,9 @@
             <hr class="ml-0">
             <h4 class="number" id="k-month2Value"></h4>
         </div>
+        <div class="col-md-3">
+                  <h4 class="month" id="k-commentary"></h4>
+               </div>
           <div class="col-md-3">
          </div>
         </div>
@@ -389,6 +414,25 @@
          
          document.getElementById('k-month2Label').innerHTML = kData.labels[kmonth2 - 1];
          document.getElementById('k-month2Value').innerHTML = kdataset[kmonth2 - 1];
+
+        // Start commentary block 
+         var klower = Math.min(kdataset[month1-1], kdataset[month2-1]);
+         var khigher = Math.max(kdataset[month1-1], kdataset[month2-1]);
+         
+         var kpercentageDiff = (100 -(klower / khigher) * 100).toFixed(2);
+         
+         if(kpercentageDiff == 0.00) {
+            var kMessage = "There's no difference in kumara prices between " + kData.labels[month1-1] + " and " + kData.labels[month2-1];
+         }   
+         else if(slower.toString().match(sdataset[month1-1])) {
+            var kMessage = "Kumara prices are " + kpercentageDiff + "% lower in " + kData.labels[month1 - 1];
+         }
+         else {
+            var kMessage = "Kumara prices are " + kpercentageDiff + "% lower in " + kData.labels[month2 - 1];
+         }
+         document.getElementById('k-commentary').innerHTML = kMessage;
+         // Finsh commentary block
+
          // get line chart canvas
          var canvas3 = document.getElementById('kumaraCanvas').getContext('2d');
          // draw line chart
